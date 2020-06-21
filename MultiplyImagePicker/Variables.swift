@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+class PlaceVariables {
+    static let sharedVariables = PlaceVariables()
+    
+    var imageArray = [UIImage]()
+    
+    private init () {}
+}
