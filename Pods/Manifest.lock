@@ -1,0 +1,22 @@
+PODS:
+  - BSImagePicker (3.2.0)
+  - ImageSlideshow (1.8.3):
+    - ImageSlideshow/Core (= 1.8.3)
+  - ImageSlideshow/Core (1.8.3)
+
+DEPENDENCIES:
+  - BSImagePicker (~> 3.1)
+  - ImageSlideshow (~> 1.8.3)
+
+SPEC REPOS:
+  trunk:
+    - BSImagePicker
+    - ImageSlideshow
+
+SPEC CHECKSUMS:
+  BSImagePicker: 1c0d14fa6f1b55380cd49cbebe47584f10e180c6
+  ImageSlideshow: 4694d7d699a1549582e7cc631fb392d8f91630f3
+
+PODFILE CHECKSUM: eecad4972f25497bd5ec63f9ce286c6ee903a3c6
+
+COCOAPODS: 1.9.2
