@@ -73,7 +73,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         options.deliveryMode = .highQualityFormat
         options.resizeMode = .none
         
-        if asset.count == 3 {
+        while asset.count == 3 {
             manager.requestImage(for: asset[0], targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: options) { (image, _) in
                 if let img = image {
                     resultImage.append(img)
@@ -89,8 +89,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
                     resultImage.append(img)
                 }
             }
+            return resultImage
             
-        } else if asset.count == 2 {
+        
+        }
+        
+        while asset.count == 2 {
             manager.requestImage(for: asset[0], targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: options) { (image, _) in
                 if let img = image {
                     resultImage.append(img)
@@ -101,17 +105,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
                     resultImage.append(img)
                 }
             }
-        } else {
-            manager.requestImage(for: asset[0], targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: options) { (image, _) in
-                if let img = image {
-                    resultImage.append(img)
-                }
-            }
+            return resultImage
         }
         
-        return resultImage
-    }
-    
+        while asset.count == 1 {
+            manager.requestImage(for: asset[0], targetSize: PHImageManagerMaximumSize, contentMode: .aspectFill, options: options) { (image, _) in
+                    if let img = image {
+                        resultImage.append(img)
+                    }
+                }
+            }
+            
+            return resultImage
+        }
+        
+        
     
     @IBAction func buttonClicked(_ sender: Any) {
         self.performSegue(withIdentifier: "toImages", sender: nil)
